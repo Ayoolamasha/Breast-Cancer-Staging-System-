@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Breast Cancer Staging</string>
+
+<!--    QUESTIONS TITLE-->
+    <string name="lump">What is the state of the lump in the breast </string>
+    <string name="lump_size_palpable">If palpable, what is the size of the lump</string>
+    <string name="lump_size_palpable_attachment">If palpable, where is it attached </string>
+    <string name="lymph_node">What is the state of the lymph node by the armpit</string>
+    <string name="lymph_node_state">If swollen, what is the position of the node </string>
+    <string name="distant_spread">Has the tumor spread through the distant organs (e.g
+        Lung,Brain,Bone,Liver,Second Breast, Others)</string>
+
+<!--    QUESTION ANSWERS-->
+    <string name="lump_palpable">Palpable</string>
+    <string name="lump_palpable_size1"> <![CDATA[<2cm]]> </string>
+    <string name="lump_palpable_size2"> 2cm to 5cm </string>
+    <string name="lump_palpable_size3">  <![CDATA[>5cm]]> </string>
+    <string name="lump_palpable_attachment1"> To underlying muscles </string>
+    <string name="lump_palpable_attachment2">  To overlying skin </string>
+    <string name="lump_non_palpable">Non Palpable</string>
+    <string name="lymph_node_state1"> Swollen </string>
+    <string name="lymph_node_state2"> Not Swollen </string>
+    <string name="lymph_node_swollen_state1"> Swollen and Mobile </string>
+    <string name="lymph_node_swollen_state2"> Swollen, Fixed/Matte </string>
+    <string name="tumor_spread">Positive</string>
+    <string name="tumor_spread2">Negative</string>
+
+    <string name="btn_stage">Stage</string>
+    <string name="refresh">Refresh</string>
+    <string name="click_here">Click Here</string>
+
+    <!--  STAGE -->
+    <string name="stage_1">Stage 1</string>
+    <string name="stage_2">Stage 2</string>
+    <string name="stage_3">Stage 3</string>
+    <string name="stage_4">Stage 4</string>
+
+    <!--- Recycler Dummy Text -->
+    <string name="dummy_patient_name">John Doe</string>
+    <string name="dummy_patient_symptoms">Stage 1 - Palpable, Not swollen</string>
+    <string name="dummy_patient_stage">1</string>
+    <string name="dummy_patient_date">03/01/2023</string>
+
+    <!-- Image Content Description -->
+    <string name="img_content">Image</string>
+
+    <!-- TEXT FIELD HINT -->
+    <string name="hint_patients_name">Patient\'s Full Name</string>
+    <string name="hint_patients_age">Patient\'s Age</string>
+    <string name="hint_patients_symptoms">Patient\'s Full Symptoms</string>
+
+    <string name="toolbar_details">Patient\'s Details</string>
+    <string name="toolbar_details_2">Edit Patient\'s Record</string>
+    <string name="add_info">Add Patient\'s Diagnosis</string>
+    <string name="patient_s_records">Patient\'s Records</string>
+
+    <!-- TOOL TIP DELETE ALL -->
+    <string name="tool_tip_deleteAll">Delete All</string>
+</resources>

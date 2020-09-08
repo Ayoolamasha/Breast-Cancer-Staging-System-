@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/allCases"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lump"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textAllCaps="true"/>
+
+            <RadioButton
+                android:id="@+id/palpableLump"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lump_palpable"/>
+
+            <RadioButton
+                android:id="@+id/non_palpableLump"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lump_non_palpable"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lump_size_palpable"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textAllCaps="true"/>
+
+
+            <RadioButton
+                android:id="@+id/size2cm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lump_palpable_size1"/>
+            <RadioButton
+                android:id="@+id/size2cmTo5cm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lump_palpable_size2"/>
+            <RadioButton
+                android:id="@+id/size5cmPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lump_palpable_size3"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lump_size_palpable_attachment"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textAllCaps="true"/>
+
+
+            <RadioButton
+                android:id="@+id/underMuscle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lump_palpable_attachment1"/>
+
+            <RadioButton
+                android:id="@+id/overMuscle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lump_palpable_attachment2"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lymph_node"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textAllCaps="true"/>
+
+            <RadioButton
+                android:id="@+id/nodeSwollen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lymph_node_state1"/>
+
+            <RadioButton
+                android:id="@+id/nodeNotSwollen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lymph_node_state2"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lymph_node_state"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textAllCaps="true"/>
+
+            <RadioButton
+                android:id="@+id/nodeSwollenMobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lymph_node_swollen_state1"/>
+
+            <RadioButton
+                android:id="@+id/nodeSwollenFixed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lymph_node_swollen_state2"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/distant_spread"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textAllCaps="true"/>
+
+            <RadioButton
+                android:id="@+id/spreadPositive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tumor_spread"/>
+
+            <RadioButton
+                android:id="@+id/spreadNegative"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tumor_spread2"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/stageBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:background="@color/colorPink"
+                android:textColor="@color/colorBlack"
+                android:layout_marginStart="5dp"
+                android:layout_marginRight="5dp"
+                android:text="@string/btn_stage"
+                android:layout_marginEnd="5dp" />
+
+            <Button
+                android:id="@+id/refreshBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_marginLeft="5dp"
+                android:background="@color/colorPink"
+                android:textColor="@color/colorBlack"
+                android:text="@string/refresh"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
