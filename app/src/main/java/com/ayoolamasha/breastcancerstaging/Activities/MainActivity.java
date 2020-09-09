@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -20,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton palpable, nonPalpable, sizeLessThan2, size2to5, size5more,
     attachedUnder, attachedOver, nodeSwollen, nodeNotSwollen,
             nodeSwollenMobile, nodeSwollenFixed, spreadPositive, spreadNegative;
-    private Button stage, refresh, clickHere;
+    private Button stage;
+    private ImageView roomDatabase;
     private TextView stageText;
 
     @Override
@@ -29,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         viewsSetup();
 
-
-
         stage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,47 +38,46 @@ public class MainActivity extends AppCompatActivity {
                 if ((sizeLessThan2.isChecked() || nonPalpable.isChecked()) && nodeNotSwollen.isChecked()){
                     stageText.setVisibility(View.VISIBLE);
                     stageText.setText(getResources().getText(R.string.stage_1));
-                    //stageText.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                    buttonAnim();
+
 
 
                 }
                 else if(nonPalpable.isChecked() && nodeSwollen.isChecked()){
                     stageText.setVisibility(View.VISIBLE);
                     stageText.setText(getResources().getText(R.string.stage_2));
-                    clickHere.setVisibility(View.VISIBLE);
+
 
 
                 }
                 else if (sizeLessThan2.isChecked() && nodeSwollen.isChecked()){
                     stageText.setVisibility(View.VISIBLE);
                     stageText.setText(getResources().getText(R.string.stage_2));
-                    clickHere.setVisibility(View.VISIBLE);
+
 
                 }
                 else if (size2to5.isChecked() && nodeNotSwollen.isChecked()){
                     stageText.setVisibility(View.VISIBLE);
                     stageText.setText(getResources().getText(R.string.stage_2));
-                    clickHere.setVisibility(View.VISIBLE);
+
 
                 }
                 else if (size5more.isChecked() && nodeSwollenMobile.isChecked()){
                     stageText.setVisibility(View.VISIBLE);
                     stageText.setText(getResources().getText(R.string.stage_2));
-                    clickHere.setVisibility(View.VISIBLE);
+
 
                 }
                 else if (nonPalpable.isChecked() && nodeSwollenFixed.isChecked()){
                     stageText.setVisibility(View.VISIBLE);
                     stageText.setText(getResources().getText(R.string.stage_3));
-                    clickHere.setVisibility(View.VISIBLE);
+
 
                 }
                 else if ((sizeLessThan2.isChecked() || size2to5.isChecked() || size5more.isChecked())
                         &&(attachedUnder.isChecked() || attachedOver.isChecked())){
                     stageText.setVisibility(View.VISIBLE);
                     stageText.setText(getResources().getText(R.string.stage_3));
-                    clickHere.setVisibility(View.VISIBLE);
+
 
                 }
                 else if (sizeLessThan2.isChecked() || (size2to5.isChecked())
@@ -86,14 +85,14 @@ public class MainActivity extends AppCompatActivity {
 
                     stageText.setVisibility(View.VISIBLE);
                     stageText.setText(getResources().getText(R.string.stage_3));
-                    clickHere.setVisibility(View.VISIBLE);
+
 
                 }
                 else if ((palpable.isChecked() || nonPalpable.isChecked()) || (attachedUnder.isChecked()
                         || attachedOver.isChecked()) || (nodeSwollen.isChecked() || nodeNotSwollen.isChecked()) && spreadPositive.isChecked()){
                     stageText.setVisibility(View.VISIBLE);
                     stageText.setText(getResources().getText(R.string.stage_4));
-                    clickHere.setVisibility(View.VISIBLE);
+
                 }else{
                     Toast.makeText(MainActivity.this, "Option not valid", Toast.LENGTH_SHORT).show();
                 }
@@ -101,18 +100,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        refresh.setOnClickListener(new View.OnClickListener() {
+        roomDatabase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                lumpStateRg.clearCheck();
-//                lumpSizeRg.clearCheck();
-//                lumpAttachmentRg.clearCheck();
-//                nodeStateRg.clearCheck();
-//                nodePositionRg.clearCheck();
-//                tumorStateRg.clearCheck();
-//                stageText.setVisibility(View.GONE);
-//                clickHere.setVisibility(View.GONE);
-
                 Intent intent = new Intent(getApplicationContext(), PatientRecordActivity.class);
                 startActivity(intent);
 
@@ -135,7 +125,6 @@ public class MainActivity extends AppCompatActivity {
         spreadPositive = findViewById(R.id.spreadPositive);
         spreadNegative = findViewById(R.id.spreadNegative);
         stage = findViewById(R.id.stageBtn);
-        refresh = findViewById(R.id.refreshBtn);
         lumpStateRg = findViewById(R.id.lumpStateRg);
         lumpSizeRg = findViewById(R.id.lumpPalpableSizeRg);
         lumpAttachmentRg = findViewById(R.id.lumpPalpableAttachmentRg);
@@ -143,17 +132,11 @@ public class MainActivity extends AppCompatActivity {
         nodePositionRg = findViewById(R.id.nodeSwollenPositionRg);
         tumorStateRg = findViewById(R.id.tumorSpreadRg);
         stageText = findViewById(R.id.stageText);
-        clickHere = findViewById(R.id.clickHere);
+        roomDatabase = findViewById(R.id.roomDB);
 
         stageText.setVisibility(View.GONE);
-        clickHere.setVisibility(View.GONE);
     }
 
-    private void buttonAnim(){
-        clickHere.setVisibility(View.VISIBLE);
-        Animation sideAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.bottom_anim);
-        clickHere.setAnimation(sideAnimation);
-    }
 
 
     public void refresh(View view) {
@@ -164,6 +147,6 @@ public class MainActivity extends AppCompatActivity {
         nodePositionRg.clearCheck();
         tumorStateRg.clearCheck();
         stageText.setVisibility(View.GONE);
-        clickHere.setVisibility(View.GONE);
+
     }
 }
