@@ -33,10 +33,9 @@
                 android:text="@string/toolbar_details"
                 android:textColor="@color/colorBlack"
                 android:layout_marginStart="40dp"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="40dp"
+                style="@style/CustomTextHeading"
                 tools:ignore="RelativeOverlap" />
 
             <ImageView
@@ -65,16 +64,18 @@
          android:text="@string/hint_patients_name"
          android:layout_marginStart="10dp"
          android:layout_marginLeft="10dp"
-         android:textColor="@color/colorBlack"/>
+         android:textColor="@color/colorBlack"
+         style="@style/CustomTextHeading"/>
 
     <TextView
         android:id="@+id/patientName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:text="@string/dummy_patient_name"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginLeft="10dp"
+        style="@style/CustomText"/>
 
     <TextView
         android:id="@+id/age"
@@ -84,7 +85,8 @@
         android:text="@string/hint_patients_age"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:textColor="@color/colorBlack"/>
+        android:textColor="@color/colorBlack"
+        style="@style/CustomTextHeading"/>
 
     <TextView
         android:id="@+id/agePatient"
@@ -92,8 +94,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
-        android:text="@string/dummy_patient_name"/>
+        android:layout_marginTop="10dp"
+        android:text="@string/dummy_patient_name"
+        style="@style/CustomText"/>
 
     <TextView
         android:id="@+id/symptoms"
@@ -103,7 +106,9 @@
         android:text="@string/hint_patients_symptoms"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:textColor="@color/colorBlack"/>
+        android:textColor="@color/colorBlack"
+        style="@style/CustomTextHeading"
+        />
 
     <TextView
         android:id="@+id/patientSymptoms"
@@ -111,8 +116,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
-        android:text="@string/dummy_patient_symptoms"/>
+        android:layout_marginTop="10dp"
+        android:text="@string/dummy_patient_symptoms"
+        style="@style/CustomText"
+        />
 
     <TextView
         android:id="@+id/stage"
@@ -122,14 +129,17 @@
         android:text="@string/btn_stage"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:textColor="@color/colorBlack"/>
+        android:textColor="@color/colorBlack"
+        style="@style/CustomTextHeading"/>
 
     <TextView
         android:id="@+id/patientStage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        style="@style/CustomText"/>
 
 <!--    <NumberPicker-->
 <!--        android:id="@+id/Stage"-->

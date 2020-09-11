@@ -32,10 +32,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/add_info"
+                style="@style/CustomTextHeading"
                 android:textColor="@color/colorBlack"
                 android:layout_marginStart="40dp"
-                android:textSize="20sp"
-                android:textStyle="bold"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="40dp"
                 tools:ignore="RelativeOverlap" />

@@ -7,4 +7,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="CustomText">
+        <item name="android:textSize"> 20sp </item>
+        <item name="fontFamily"> @font/brandon_reg </item>
+    </style>
+    <style name="CustomTextHeading">
+        <item name="android:textSize">22sp</item>
+        <item name="fontFamily">@font/brandon_blk</item>
+    </style>
+    <style name="CustomOptionsText">
+        <item name="fontFamily">@font/brandon_reg</item>
+    </style>
+
 </resources>

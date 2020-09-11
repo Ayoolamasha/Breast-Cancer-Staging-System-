@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Breast Cancer Staging System</string>
+    <string name="app_name_splash">Breast Cancer \n Staging System</string>
     <string name="toolbar_app_name">Staging Form</string>
 
 <!--    QUESTIONS TITLE-->
@@ -16,8 +17,8 @@
     <string name="lump_palpable_size1"> <![CDATA[<2cm]]> </string>
     <string name="lump_palpable_size2"> 2cm to 5cm </string>
     <string name="lump_palpable_size3">  <![CDATA[>5cm]]> </string>
-    <string name="lump_palpable_attachment1"> To underlying muscles </string>
-    <string name="lump_palpable_attachment2">  To overlying skin </string>
+    <string name="lump_palpable_attachment1"> To Underlying Muscles </string>
+    <string name="lump_palpable_attachment2">  To Overlying Skin </string>
     <string name="lump_non_palpable">Non Palpable</string>
     <string name="lymph_node_state1"> Swollen </string>
     <string name="lymph_node_state2"> Not Swollen </string>

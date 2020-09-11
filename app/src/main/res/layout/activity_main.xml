@@ -30,6 +30,7 @@
                     android:text="@string/app_name"
                     android:textColor="@color/colorBlack"
                     android:textSize="20sp"
+                    android:fontFamily="@font/brandon_blk"
                     tools:ignore="RelativeOverlap" />
 
                 <ImageView
@@ -73,7 +74,10 @@
                 android:text="@string/lump"
                 android:padding="10dp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textColor="@color/colorBlack"
+                android:textAllCaps="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"/>
 
             <RadioGroup
                 android:id="@+id/lumpStateRg"
@@ -87,13 +91,15 @@
                     android:id="@+id/palpableLump"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lump_palpable"/>
+                    android:text="@string/lump_palpable"
+                    style="@style/CustomOptionsText"/>
 
                 <RadioButton
                     android:id="@+id/non_palpableLump"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lump_non_palpable"/>
+                    android:text="@string/lump_non_palpable"
+                    style="@style/CustomOptionsText"/>
 
             </RadioGroup>
         </LinearLayout>
@@ -111,7 +117,10 @@
                 android:text="@string/lump_size_palpable"
                 android:padding="10dp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textColor="@color/colorBlack"
+                android:textAllCaps="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"/>
 
             <RadioGroup
                 android:id="@+id/lumpPalpableSizeRg"
@@ -125,17 +134,20 @@
                     android:id="@+id/size2cm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lump_palpable_size1"/>
+                    android:text="@string/lump_palpable_size1"
+                    style="@style/CustomOptionsText"/>
                 <RadioButton
                     android:id="@+id/size2cmTo5cm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lump_palpable_size2"/>
+                    android:text="@string/lump_palpable_size2"
+                    style="@style/CustomOptionsText"/>
                 <RadioButton
                     android:id="@+id/size5cmPlus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lump_palpable_size3"/>
+                    android:text="@string/lump_palpable_size3"
+                    style="@style/CustomOptionsText"/>
 
 
             </RadioGroup>
@@ -153,7 +165,10 @@
                 android:text="@string/lump_size_palpable_attachment"
                 android:padding="10dp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textColor="@color/colorBlack"
+                android:textAllCaps="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"/>
 
             <RadioGroup
                 android:id="@+id/lumpPalpableAttachmentRg"
@@ -167,13 +182,15 @@
                     android:id="@+id/underMuscle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lump_palpable_attachment1"/>
+                    android:text="@string/lump_palpable_attachment1"
+                    style="@style/CustomOptionsText"/>
 
                 <RadioButton
                     android:id="@+id/overMuscle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lump_palpable_attachment2"/>
+                    android:text="@string/lump_palpable_attachment2"
+                    style="@style/CustomOptionsText"/>
 
             </RadioGroup>
         </LinearLayout>
@@ -191,7 +208,10 @@
                 android:text="@string/lymph_node"
                 android:padding="10dp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textColor="@color/colorBlack"
+                android:textAllCaps="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"/>
 
             <RadioGroup
                 android:id="@+id/nodeStateRg"
@@ -205,13 +225,15 @@
                     android:id="@+id/nodeSwollen"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lymph_node_state1"/>
+                    android:text="@string/lymph_node_state1"
+                    style="@style/CustomOptionsText"/>
 
                 <RadioButton
                     android:id="@+id/nodeNotSwollen"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lymph_node_state2"/>
+                    android:text="@string/lymph_node_state2"
+                    style="@style/CustomOptionsText"/>
 
             </RadioGroup>
         </LinearLayout>
@@ -229,7 +251,10 @@
                 android:text="@string/lymph_node_state"
                 android:padding="10dp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textColor="@color/colorBlack"
+                android:textAllCaps="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"/>
 
             <RadioGroup
                 android:id="@+id/nodeSwollenPositionRg"
@@ -243,13 +268,15 @@
                     android:id="@+id/nodeSwollenMobile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lymph_node_swollen_state1"/>
+                    android:text="@string/lymph_node_swollen_state1"
+                    style="@style/CustomOptionsText"/>
 
                 <RadioButton
                     android:id="@+id/nodeSwollenFixed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lymph_node_swollen_state2"/>
+                    android:text="@string/lymph_node_swollen_state2"
+                    style="@style/CustomOptionsText"/>
 
             </RadioGroup>
         </LinearLayout>
@@ -267,7 +294,10 @@
                 android:text="@string/distant_spread"
                 android:padding="10dp"
                 android:textStyle="bold"
-                android:textAllCaps="true"/>
+                android:textColor="@color/colorBlack"
+                android:textAllCaps="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"/>
 
             <RadioGroup
                 android:id="@+id/tumorSpreadRg"
@@ -281,13 +311,15 @@
                     android:id="@+id/spreadPositive"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/tumor_spread"/>
+                    android:text="@string/tumor_spread"
+                    style="@style/CustomOptionsText"/>
 
                 <RadioButton
                     android:id="@+id/spreadNegative"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/tumor_spread2"/>
+                    android:text="@string/tumor_spread2"
+                    style="@style/CustomOptionsText"/>
 
             </RadioGroup>
         </LinearLayout>
@@ -309,6 +341,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginRight="5dp"
                 android:text="@string/btn_stage"
+                android:fontFamily="@font/brandon_blk"
                 android:layout_marginEnd="5dp" />
 
 
