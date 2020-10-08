@@ -1,146 +1,305 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<ScrollView-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:padding="16dp"-->
+<!--    android:background="@color/colorHomeBackground">-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/backEdit"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:src="@drawable/ic_arrow_back"-->
+<!--                    android:layout_alignParentStart="true"-->
+<!--                    android:layout_alignParentLeft="true"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:contentDescription="@string/img_content"-->
+<!--                    />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/toolbarAddPatientInfo"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/add_info"-->
+<!--                    style="@style/CustomTextHeading"-->
+<!--                    android:textColor="@color/colorBlack"-->
+<!--                    android:layout_marginStart="40dp"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:layout_marginLeft="40dp"-->
+<!--                    tools:ignore="RelativeOverlap" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/saveInfo"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:src="@drawable/ic_check"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_alignParentRight="true"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:layout_marginRight="10dp"-->
+<!--                    android:layout_centerVertical="true"-->
+<!--                    android:onClick="save"-->
+<!--                    android:contentDescription="@string/img_content"/>-->
+<!--            </RelativeLayout>-->
+
+<!--        </androidx.appcompat.widget.Toolbar>-->
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            app:boxBackgroundColor="@color/colorWhite"-->
+<!--            android:hint="@string/hint_patients_name"-->
+<!--            android:textColorHint="@color/colorBlack"-->
+<!--            app:startIconDrawable="@drawable/ic_account_circle"-->
+<!--            app:startIconTint="@color/colorBlack"-->
+<!--            app:endIconMode="clear_text"-->
+<!--            app:endIconTint="@color/colorBlack"-->
+<!--            app:boxStrokeWidthFocused="2dp"-->
+<!--            app:boxStrokeColor="@color/colorBlack">-->
+
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/editTextPatientName"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:inputType="text"/>-->
+
+
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            app:boxBackgroundColor="@color/colorWhite"-->
+<!--            android:hint="@string/hint_patients_age"-->
+<!--            android:textColorHint="@color/colorBlack"-->
+<!--            app:startIconDrawable="@drawable/ic_event"-->
+<!--            app:startIconTint="@color/colorBlack"-->
+<!--            app:endIconMode="clear_text"-->
+<!--            app:endIconTint="@color/colorBlack"-->
+<!--            app:boxStrokeWidthFocused="2dp"-->
+<!--            app:boxStrokeColor="@color/colorBlack">-->
+
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/editTextPatientAge"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:inputType="number"/>-->
+
+
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            app:boxBackgroundColor="@color/colorWhite"-->
+<!--            android:hint="@string/hint_patients_symptoms"-->
+<!--            android:textColorHint="@color/colorBlack"-->
+<!--            app:startIconDrawable="@drawable/ic_note_add"-->
+<!--            app:startIconTint="@color/colorBlack"-->
+<!--            app:endIconMode="clear_text"-->
+<!--            app:endIconTint="@color/colorBlack"-->
+<!--            app:boxStrokeWidthFocused="2dp"-->
+<!--            app:boxStrokeColor="@color/colorBlack">-->
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/editTextPatientSymptoms"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:inputType="textMultiLine"/>-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/stagingClass"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/btn_stage"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textColor="@color/colorBlack"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            style="@style/TextAppearance.AppCompat.Medium"/>-->
+
+<!--        <NumberPicker-->
+<!--            android:id="@+id/StagePicker"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            />-->
+
+<!--    </LinearLayout>-->
+<!--</ScrollView>-->
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:padding="16dp"
-    android:background="@color/colorHomeBackground"
-    android:orientation="vertical">
+    android:background="@color/colorHomeBackground">
 
-    <androidx.appcompat.widget.Toolbar
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <RelativeLayout
+        <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/backEdit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_arrow_back"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:contentDescription="@string/img_content"
-                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/toolbarAddPatientInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/add_info"
-                style="@style/CustomTextHeading"
-                android:textColor="@color/colorBlack"
-                android:layout_marginStart="40dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="40dp"
-                tools:ignore="RelativeOverlap" />
+                <ImageView
+                    android:id="@+id/backEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_back"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/img_content"
+                    />
 
-            <ImageView
-                android:id="@+id/saveInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_check"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_centerVertical="true"
-                android:onClick="save"
-                android:contentDescription="@string/img_content"/>
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/toolbarAddPatientInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_info"
+                    style="@style/CustomTextHeading"
+                    android:textColor="@color/colorBlack"
+                    android:layout_marginStart="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="40dp"
+                    tools:ignore="RelativeOverlap" />
 
-    </androidx.appcompat.widget.Toolbar>
+                <ImageView
+                    android:id="@+id/saveInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_check"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_centerVertical="true"
+                    android:onClick="save"
+                    android:contentDescription="@string/img_content"/>
+            </RelativeLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_marginTop="20dp"
-        app:boxBackgroundColor="@color/colorWhite"
-        android:hint="@string/hint_patients_name"
-        android:textColorHint="@color/colorBlack"
-        app:startIconDrawable="@drawable/ic_account_circle"
-        app:startIconTint="@color/colorBlack"
-        app:endIconMode="clear_text"
-        app:endIconTint="@color/colorBlack"
-        app:boxStrokeWidthFocused="2dp"
-        app:boxStrokeColor="@color/colorBlack">
+        </androidx.appcompat.widget.Toolbar>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextPatientName"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"/>
+            android:layout_marginTop="20dp"
+            app:boxBackgroundColor="@color/colorWhite"
+            android:hint="@string/hint_patients_name"
+            android:textColorHint="@color/colorBlack"
+            app:startIconDrawable="@drawable/ic_account_circle"
+            app:startIconTint="@color/colorBlack"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/colorBlack"
+            app:boxStrokeWidthFocused="2dp"
+            app:boxStrokeColor="@color/colorBlack"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextPatientName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"/>
 
 
 
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_marginTop="20dp"
-        app:boxBackgroundColor="@color/colorWhite"
-        android:hint="@string/hint_patients_age"
-        android:textColorHint="@color/colorBlack"
-        app:startIconDrawable="@drawable/ic_event"
-        app:startIconTint="@color/colorBlack"
-        app:endIconMode="clear_text"
-        app:endIconTint="@color/colorBlack"
-        app:boxStrokeWidthFocused="2dp"
-        app:boxStrokeColor="@color/colorBlack">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextPatientAge"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"/>
+            android:layout_marginTop="20dp"
+            app:boxBackgroundColor="@color/colorWhite"
+            android:hint="@string/hint_patients_age"
+            android:textColorHint="@color/colorBlack"
+            app:startIconDrawable="@drawable/ic_event"
+            app:startIconTint="@color/colorBlack"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/colorBlack"
+            app:boxStrokeWidthFocused="2dp"
+            app:boxStrokeColor="@color/colorBlack">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextPatientAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"/>
 
 
 
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_marginTop="20dp"
-        app:boxBackgroundColor="@color/colorWhite"
-        android:hint="@string/hint_patients_symptoms"
-        android:textColorHint="@color/colorBlack"
-        app:startIconDrawable="@drawable/ic_note_add"
-        app:startIconTint="@color/colorBlack"
-        app:endIconMode="clear_text"
-        app:endIconTint="@color/colorBlack"
-        app:boxStrokeWidthFocused="2dp"
-        app:boxStrokeColor="@color/colorBlack">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextPatientSymptoms"
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textMultiLine"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginTop="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxBackgroundColor="@color/colorWhite"
+            android:hint="@string/hint_patients_symptoms"
+            android:textColorHint="@color/colorBlack"
+            app:startIconDrawable="@drawable/ic_note_add"
+            app:startIconTint="@color/colorBlack"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/colorBlack"
+            app:boxStrokeWidthFocused="2dp"
+            app:boxStrokeColor="@color/colorBlack">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextPatientSymptoms"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:inputType="textMultiLine"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-    <TextView
-        android:id="@+id/stagingClass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_stage"
-        android:textSize="20sp"
-        android:textColor="@color/colorBlack"
-        android:layout_marginTop="10dp"
-        style="@style/TextAppearance.AppCompat.Medium"/>
 
-    <NumberPicker
-        android:id="@+id/StagePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+        <TextView
+            android:id="@+id/stagingClass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_stage"
+            android:textSize="20sp"
+            android:textColor="@color/colorBlack"
+            android:layout_marginTop="10dp"
+            style="@style/TextAppearance.AppCompat.Medium"/>
 
-</LinearLayout>
+        <NumberPicker
+            android:id="@+id/StagePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+
+
+    </LinearLayout>
+</ScrollView>

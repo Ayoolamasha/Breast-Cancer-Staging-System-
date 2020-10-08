@@ -3,13 +3,14 @@ package com.ayoolamasha.breastcancerstaging.Activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import com.ayoolamasha.breastcancerstaging.Database.Records;
 import com.ayoolamasha.breastcancerstaging.R;
+
 
 
 public class PatientRecordDetailsActivity extends AppCompatActivity {
@@ -20,14 +21,19 @@ public class PatientRecordDetailsActivity extends AppCompatActivity {
     public static final String EXTRA_PATIENT_AGE =  "com.ayoolamasha.breastcancerstaging.Activities.EXTRA_PATIENT_AGE";
     public static final String EXTRA_PATIENT_SYMPTOMS =  "com.ayoolamasha.breastcancerstaging.Activities.EXTRA_PATIENT_SYMPTOMS";
     public static final String EXTRA_PATIENT_STAGE =  "com.ayoolamasha.breastcancerstaging.Activities.EXTRA_PATIENT_STAGE";
+    private static final int EDIT_PATIENT_RECORD_REQUEST = 2;
 
 
     private TextView patientName, patientAge, patientSymptoms, patientStage;
     private ImageView backArrow, editDetails;
+    private String patientId, patientNameEdit, patientSymptomsEdit;
+    private String patientAgeEdit, patientStageEdit;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_patient_details);
         viewsSetup();
         goBack();
@@ -35,6 +41,7 @@ public class PatientRecordDetailsActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         if (intent.hasExtra(EXTRA_PATIENT_ID)){
+            patientId = EXTRA_PATIENT_ID;
             patientName.setText(intent.getStringExtra(EXTRA_PATIENT_NAME));
             patientAge.setText(intent.getStringExtra(EXTRA_PATIENT_AGE));
             patientSymptoms.setText(intent.getStringExtra(EXTRA_PATIENT_SYMPTOMS));
@@ -60,21 +67,27 @@ public class PatientRecordDetailsActivity extends AppCompatActivity {
         editDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Records records = new Records();
-                Intent intent = new Intent(PatientRecordDetailsActivity.this, AddNewRecordActivity.class);
-                intent.putExtra(AddNewRecordActivity.EXTRA_PATIENT_ID, records.getId());
-                intent.putExtra(AddNewRecordActivity.EXTRA_PATIENT_NAME, records.getPatientName());
-                intent.putExtra(AddNewRecordActivity.EXTRA_PATIENT_AGE, String.valueOf(records.getPatientAge()) );
-                intent.putExtra(AddNewRecordActivity.EXTRA_PATIENT_SYMPTOMS, records.getStagingDetails());
-                intent.putExtra(AddNewRecordActivity.EXTRA_PATIENT_STAGE, String.valueOf(records.getStageFigure()) );
+                patientNameEdit = String.valueOf(patientName.getText());
+                patientAgeEdit = String.valueOf(patientAge.getText());
+                patientSymptomsEdit = String.valueOf(patientSymptoms.getText());
+                patientStageEdit = String.valueOf(patientStage.getText());
 
-                startActivity(intent);
+
+                Intent intent = new Intent(PatientRecordDetailsActivity.this, AddNewRecordActivity.class);
+                intent.putExtra(AddNewRecordActivity.EXTRA_PATIENT_ID, patientId);
+                intent.putExtra(AddNewRecordActivity.EXTRA_PATIENT_NAME, patientNameEdit);
+                intent.putExtra(AddNewRecordActivity.EXTRA_PATIENT_AGE, patientAgeEdit );
+                intent.putExtra(AddNewRecordActivity.EXTRA_PATIENT_SYMPTOMS, patientSymptomsEdit);
+                intent.putExtra(AddNewRecordActivity.EXTRA_PATIENT_STAGE, patientStageEdit);
+
+                startActivityForResult(intent, EDIT_PATIENT_RECORD_REQUEST);
 
 
             }
         });
 
     }
+
 
     private void goBack(){
         backArrow.setOnClickListener(new View.OnClickListener() {
@@ -85,4 +98,15 @@ public class PatientRecordDetailsActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        finish();
+    }
 }

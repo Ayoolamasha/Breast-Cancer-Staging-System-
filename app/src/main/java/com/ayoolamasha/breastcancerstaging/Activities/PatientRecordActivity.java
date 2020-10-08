@@ -4,8 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.Toast;
+
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -31,7 +32,7 @@ public class PatientRecordActivity extends AppCompatActivity implements View.OnC
     private static final String TAG = "PatientRecordActivity";
 
     private static final int ADD_NEW_RECORD_REQUEST = 1;
-    private static final int VIEW_RECORD_REQUEST = 2;
+    private static final int EDIT_PATIENT_RECORD_REQUEST = 2;
     private RecordsViewModel recordsViewModel;
     private RecyclerView patientRecycler;
     private FloatingActionButton actionButton;
@@ -41,6 +42,7 @@ public class PatientRecordActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_patient_records);
         viewsSetUp();
 
@@ -78,7 +80,6 @@ public class PatientRecordActivity extends AppCompatActivity implements View.OnC
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 recordsViewModel.delete(adapter.getNoteAt(viewHolder.getAdapterPosition()));
 
-                //Toast.makeText(PatientRecordActivity.this, "Patient Record Deleted!", Toast.LENGTH_SHORT).show();
                 Snackbar.make(coordinatorLayout, "Patient Record Deleted!", Snackbar.LENGTH_SHORT).show();
 
             }
@@ -87,14 +88,22 @@ public class PatientRecordActivity extends AppCompatActivity implements View.OnC
         adapter.setOnItemClickListener(new RecordsAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Records records) {
-                Intent intent = new Intent(PatientRecordActivity.this, PatientRecordDetailsActivity.class);
-                intent.putExtra(PatientRecordDetailsActivity.EXTRA_PATIENT_ID, records.getId());
-                intent.putExtra(PatientRecordDetailsActivity.EXTRA_PATIENT_NAME, records.getPatientName());
-                intent.putExtra(PatientRecordDetailsActivity.EXTRA_PATIENT_AGE, String.valueOf(records.getPatientAge()) );
-                intent.putExtra(PatientRecordDetailsActivity.EXTRA_PATIENT_SYMPTOMS, records.getStagingDetails());
-                intent.putExtra(PatientRecordDetailsActivity.EXTRA_PATIENT_STAGE, String.valueOf(records.getStageFigure()) );
+                Intent intent = new Intent(PatientRecordActivity.this, AddNewRecordActivity.class);
+                intent.putExtra(AddNewRecordActivity.EXTRA_PATIENT_ID, records.getId());
+                intent.putExtra(AddNewRecordActivity.EXTRA_PATIENT_NAME, records.getPatientName());
+                intent.putExtra(AddNewRecordActivity.EXTRA_PATIENT_AGE, String.valueOf(records.getPatientAge()) );
+                intent.putExtra(AddNewRecordActivity.EXTRA_PATIENT_SYMPTOMS, records.getStagingDetails());
+                intent.putExtra(AddNewRecordActivity.EXTRA_PATIENT_STAGE, records.getStageFigure());
 
-                startActivity(intent);
+//                Intent intent = new Intent(PatientRecordActivity.this, PatientRecordDetailsActivity.class);
+//                intent.putExtra(PatientRecordDetailsActivity.EXTRA_PATIENT_ID, records.getId());
+//                intent.putExtra(PatientRecordDetailsActivity.EXTRA_PATIENT_NAME, records.getPatientName());
+//                intent.putExtra(PatientRecordDetailsActivity.EXTRA_PATIENT_AGE, String.valueOf(records.getPatientAge()) );
+//                intent.putExtra(PatientRecordDetailsActivity.EXTRA_PATIENT_SYMPTOMS, records.getStagingDetails());
+//                intent.putExtra(PatientRecordDetailsActivity.EXTRA_PATIENT_STAGE, String.valueOf(records.getStageFigure()) );
+
+
+                startActivityForResult(intent,EDIT_PATIENT_RECORD_REQUEST);
 
 
             }
@@ -130,13 +139,13 @@ public class PatientRecordActivity extends AppCompatActivity implements View.OnC
             Records records = new Records(patientName, patientAge, patientSymptoms, patientStage);
             recordsViewModel.insert(records);
 
-            //Toast.makeText(this, "Record Saved", Toast.LENGTH_SHORT).show();
-            Snackbar.make(coordinatorLayout, "Record Saved", Snackbar.LENGTH_SHORT).show();
-        }else if  (requestCode == VIEW_RECORD_REQUEST && resultCode == RESULT_OK){
+            Snackbar.make(coordinatorLayout, "Patient Record Saved", Snackbar.LENGTH_SHORT).show();
+
+        }else if  (requestCode == EDIT_PATIENT_RECORD_REQUEST && resultCode == RESULT_OK){
             assert data != null;
-            int id = data.getIntExtra(PatientRecordDetailsActivity.EXTRA_PATIENT_ID, -1);
+            int id = data.getIntExtra(AddNewRecordActivity.EXTRA_PATIENT_ID, -1);
             if (id == -1){
-                Toast.makeText(this, "Record can't be viewed", Toast.LENGTH_SHORT).show();
+                Snackbar.make(coordinatorLayout, "Patient Record can't be viewed", Snackbar.LENGTH_SHORT).show();
                 return;
 
             }
@@ -150,10 +159,10 @@ public class PatientRecordActivity extends AppCompatActivity implements View.OnC
             records.setId(id);
             recordsViewModel.update(records);
 
-            Toast.makeText(this, "Records Updated!", Toast.LENGTH_SHORT).show();
+            Snackbar.make(coordinatorLayout, "Patient Record Updated", Snackbar.LENGTH_SHORT).show();
 
         }else{
-            Snackbar.make(coordinatorLayout, "Record Not Saved", Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(coordinatorLayout, "Patient Record Not Updated", Snackbar.LENGTH_SHORT).show();
 
         }
     }
@@ -168,7 +177,6 @@ public class PatientRecordActivity extends AppCompatActivity implements View.OnC
 
             case R.id.deleteAllPatient:
                 recordsViewModel.deleteAll();
-                //Toast.makeText(this, "Deleted All Patients Records", Toast.LENGTH_SHORT).show();
                 Snackbar.make(coordinatorLayout, "Deleted All Patients Records", Snackbar.LENGTH_SHORT).show();
                 break;
 

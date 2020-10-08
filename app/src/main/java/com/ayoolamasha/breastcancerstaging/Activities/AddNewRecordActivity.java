@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
@@ -34,6 +35,7 @@ public class AddNewRecordActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_add_new_patient_record);
         viewSetUp();
         goBack();
@@ -81,18 +83,18 @@ public class AddNewRecordActivity extends AppCompatActivity {
             Toast.makeText(this, "Please Fill All Required Fields", Toast.LENGTH_SHORT).show();
         }
 
-        Intent info = new Intent();
-        info.putExtra(EXTRA_PATIENT_NAME, getPatientName);
-        info.putExtra(EXTRA_PATIENT_AGE, getPatientAge);
-        info.putExtra(EXTRA_PATIENT_SYMPTOMS, getPatientSymptoms);
-        info.putExtra(EXTRA_PATIENT_STAGE, getPatientStageNumber);
+        Intent data = new Intent();
+        data.putExtra(EXTRA_PATIENT_NAME, getPatientName);
+        data.putExtra(EXTRA_PATIENT_AGE, getPatientAge);
+        data.putExtra(EXTRA_PATIENT_SYMPTOMS, getPatientSymptoms);
+        data.putExtra(EXTRA_PATIENT_STAGE, getPatientStageNumber);
 
         int id = getIntent().getIntExtra(EXTRA_PATIENT_ID, -1);
         if (id != -1){
-            info.putExtra(EXTRA_PATIENT_ID, id);
+            data.putExtra(EXTRA_PATIENT_ID, id);
         }
 
-        setResult(RESULT_OK, info);
+        setResult(RESULT_OK, data);
         finish();
     }
 

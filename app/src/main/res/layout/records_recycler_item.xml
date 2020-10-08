@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginEnd="8dp"
     android:layout_marginStart="8dp"
     android:background="@color/colorHomeBackground"
-    android:layout_marginTop="8dp">
+    android:layout_marginTop="8dp"
+    android:padding="16dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="8dp">
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/dummyPatientName"
@@ -38,21 +40,20 @@
             tools:ignore="RelativeOverlap" />
         <TextView
             android:id="@+id/dummySymptoms"
-            android:layout_below="@id/dummyPatientName"
+            android:layout_below="@id/testDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/dummy_patient_symptoms"
             android:fontFamily="@font/brandon_reg"
             android:textStyle="bold"
-            android:maxLines="1"
-            android:maxLength="50"
-            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
             android:layout_centerVertical="true"/>
 
         <TextView
             android:id="@+id/testDate"
             android:layout_below="@id/dummyStage"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/dummy_patient_date"
@@ -63,17 +64,18 @@
             android:textColor="@color/colorBlack"
             android:layout_centerVertical="true"
             android:textStyle="bold"
-            android:fontFamily="@font/brandon_reg"/>
+            android:fontFamily="@font/brandon_reg"
+            />
 
-<!--        <TextView-->
-<!--            android:id="@+id/ageTest"-->
-<!--            android:layout_below="@id/testDate"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_alignParentEnd="true"-->
-<!--            android:layout_alignParentRight="true"-->
-<!--            android:text="2"-->
-<!--            android:layout_marginTop="10dp"/>-->
+        <TextView
+            android:id="@+id/ageTest"
+            android:layout_below="@id/dummyPatientName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_age"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"/>
 
     </RelativeLayout>
 

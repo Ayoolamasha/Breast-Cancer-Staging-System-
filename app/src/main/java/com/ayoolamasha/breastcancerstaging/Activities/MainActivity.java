@@ -5,29 +5,32 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ayoolamasha.breastcancerstaging.R;
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
     private RadioGroup lumpStateRg, lumpSizeRg, lumpAttachmentRg, nodeStateRg, nodePositionRg, tumorStateRg;
     private RadioButton palpable, nonPalpable, sizeLessThan2, size2to5, size5more,
     attachedUnder, attachedOver, nodeSwollen, nodeNotSwollen,
-            nodeSwollenMobile, nodeSwollenFixed, spreadPositive, spreadNegative;
+            nodeSwollenMobile, nodeSwollenFixed, spreadPositive;
     private Button stage;
     private ImageView roomDatabase;
     private TextView stageText;
+    private ScrollView scrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         viewsSetup();
 
@@ -37,46 +40,94 @@ public class MainActivity extends AppCompatActivity {
 
                 if ((sizeLessThan2.isChecked() || nonPalpable.isChecked()) && nodeNotSwollen.isChecked()){
                     stageText.setVisibility(View.VISIBLE);
-                    stageText.setText(getResources().getText(R.string.stage_1));
+                    Snackbar.make(scrollView, getResources().getText(R.string.stage_1), Snackbar.LENGTH_LONG).setAction(R.string.save,
+                            new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(getApplicationContext(), PatientRecordActivity.class);
+                                    startActivity(intent);
+                                }
+                            }).show();
 
 
 
                 }
                 else if(nonPalpable.isChecked() && nodeSwollen.isChecked()){
                     stageText.setVisibility(View.VISIBLE);
-                    stageText.setText(getResources().getText(R.string.stage_2));
+                    Snackbar.make(scrollView, getResources().getText(R.string.stage_2), Snackbar.LENGTH_LONG).setAction(R.string.save,
+                            new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(getApplicationContext(), PatientRecordActivity.class);
+                                    startActivity(intent);
+                                }
+                            }).show();
 
 
 
                 }
                 else if (sizeLessThan2.isChecked() && nodeSwollen.isChecked()){
                     stageText.setVisibility(View.VISIBLE);
-                    stageText.setText(getResources().getText(R.string.stage_2));
+                    Snackbar.make(scrollView, getResources().getText(R.string.stage_2), Snackbar.LENGTH_LONG).setAction(R.string.save,
+                            new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(getApplicationContext(), PatientRecordActivity.class);
+                                    startActivity(intent);
+                                }
+                            }).show();
 
 
                 }
                 else if (size2to5.isChecked() && nodeNotSwollen.isChecked()){
                     stageText.setVisibility(View.VISIBLE);
-                    stageText.setText(getResources().getText(R.string.stage_2));
+                    Snackbar.make(scrollView, getResources().getText(R.string.stage_2), Snackbar.LENGTH_LONG).setAction(R.string.save,
+                            new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(getApplicationContext(), PatientRecordActivity.class);
+                                    startActivity(intent);
+                                }
+                            }).show();
 
 
                 }
                 else if (size5more.isChecked() && nodeSwollenMobile.isChecked()){
                     stageText.setVisibility(View.VISIBLE);
-                    stageText.setText(getResources().getText(R.string.stage_2));
+                    Snackbar.make(scrollView, getResources().getText(R.string.stage_2), Snackbar.LENGTH_LONG).setAction(R.string.save,
+                            new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(getApplicationContext(), PatientRecordActivity.class);
+                                    startActivity(intent);
+                                }
+                            }).show();
 
 
                 }
                 else if (nonPalpable.isChecked() && nodeSwollenFixed.isChecked()){
                     stageText.setVisibility(View.VISIBLE);
-                    stageText.setText(getResources().getText(R.string.stage_3));
-
+                    Snackbar.make(scrollView, getResources().getText(R.string.stage_3), Snackbar.LENGTH_LONG).setAction(R.string.save,
+                            new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(getApplicationContext(), PatientRecordActivity.class);
+                                    startActivity(intent);
+                                }
+                            }).show();
 
                 }
                 else if ((sizeLessThan2.isChecked() || size2to5.isChecked() || size5more.isChecked())
                         &&(attachedUnder.isChecked() || attachedOver.isChecked())){
                     stageText.setVisibility(View.VISIBLE);
-                    stageText.setText(getResources().getText(R.string.stage_3));
+                    Snackbar.make(scrollView, getResources().getText(R.string.stage_3), Snackbar.LENGTH_LONG).setAction(R.string.save,
+                            new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(getApplicationContext(), PatientRecordActivity.class);
+                                    startActivity(intent);
+                                }
+                            }).show();
 
 
                 }
@@ -84,17 +135,37 @@ public class MainActivity extends AppCompatActivity {
                         || (size5more.isChecked()) && nodeSwollenFixed.isChecked()){
 
                     stageText.setVisibility(View.VISIBLE);
-                    stageText.setText(getResources().getText(R.string.stage_3));
+                    Snackbar.make(scrollView, getResources().getText(R.string.stage_3), Snackbar.LENGTH_LONG).setAction(R.string.save,
+                            new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(getApplicationContext(), PatientRecordActivity.class);
+                            startActivity(intent);
+                        }
+                    }).show();
 
 
                 }
                 else if ((palpable.isChecked() || nonPalpable.isChecked()) || (attachedUnder.isChecked()
                         || attachedOver.isChecked()) || (nodeSwollen.isChecked() || nodeNotSwollen.isChecked()) && spreadPositive.isChecked()){
                     stageText.setVisibility(View.VISIBLE);
-                    stageText.setText(getResources().getText(R.string.stage_4));
+                    Snackbar.make(scrollView, getResources().getText(R.string.stage_4), Snackbar.LENGTH_LONG).setAction(R.string.save,
+                            new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(getApplicationContext(), PatientRecordActivity.class);
+                                    startActivity(intent);
+                                }
+                            }).show();
 
                 }else{
-                    Toast.makeText(MainActivity.this, "Option not valid", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(scrollView, getResources().getText(R.string.not_valid), Snackbar.LENGTH_LONG).setAction(R.string.refresh,
+                            new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    refresh(view);
+                                }
+                            }).show();
                 }
 
             }
@@ -123,7 +194,6 @@ public class MainActivity extends AppCompatActivity {
         nodeSwollenMobile = findViewById(R.id.nodeSwollenMobile);
         nodeSwollenFixed = findViewById(R.id.nodeSwollenFixed);
         spreadPositive = findViewById(R.id.spreadPositive);
-        spreadNegative = findViewById(R.id.spreadNegative);
         stage = findViewById(R.id.stageBtn);
         lumpStateRg = findViewById(R.id.lumpStateRg);
         lumpSizeRg = findViewById(R.id.lumpPalpableSizeRg);
@@ -134,7 +204,10 @@ public class MainActivity extends AppCompatActivity {
         stageText = findViewById(R.id.stageText);
         roomDatabase = findViewById(R.id.roomDB);
 
+
         stageText.setVisibility(View.GONE);
+
+        scrollView = findViewById(R.id.scrollView);
     }
 
 
@@ -147,6 +220,9 @@ public class MainActivity extends AppCompatActivity {
         nodePositionRg.clearCheck();
         tumorStateRg.clearCheck();
         stageText.setVisibility(View.GONE);
+        Toast.makeText(this, "Refreshed", Toast.LENGTH_SHORT).show();
 
     }
+
+
 }

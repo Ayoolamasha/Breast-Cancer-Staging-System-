@@ -5,12 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:id="@+id/scrollView"
     android:background="@color/colorHomeBackground"
     tools:context=".Activities.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/linear"
         android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
@@ -27,7 +29,7 @@
                     android:id="@+id/appName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/app_name"
+                    android:text="@string/toolbar_app_name"
                     android:textColor="@color/colorBlack"
                     android:textSize="20sp"
                     android:fontFamily="@font/brandon_blk"
@@ -43,7 +45,8 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="80dp"
                     android:layout_marginRight="80dp"
-                    android:layout_alignParentRight="true" />
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"/>
 
                 <ImageView
                     android:id="@+id/roomDB"
@@ -54,13 +57,11 @@
                     android:contentDescription="@string/img_content"
                     android:layout_marginEnd="30dp"
                     android:layout_marginRight="30dp"
-                    android:layout_alignParentRight="true" />
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"/>
 
 
             </RelativeLayout>
-
-
-
         </androidx.appcompat.widget.Toolbar>
 
         <LinearLayout

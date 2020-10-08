@@ -6,7 +6,8 @@
     <color name="colorTransparent">#00000000</color>
     <color name="colorPrimary">#FF96A7</color>
     <color name="colorPrimaryDark">#FFA7B3</color>
-    <!--    <color name="colorPrimaryDark">#3700B3</color>-->
     <color name="colorAccent">#FFB4BC</color>
     <color name="colorPink">#FFBFC3</color>
+    <color name="black">#000000</color>
+
 </resources>

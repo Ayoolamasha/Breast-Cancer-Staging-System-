@@ -1,6 +1,5 @@
 package com.ayoolamasha.breastcancerstaging.Adapter;
 
-import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,7 +54,7 @@ public class RecordsAdapter extends ListAdapter<Records, RecordsAdapter.ViewHold
         holder.patientName.setText(patientRecord.getPatientName());
         holder.patientSymptoms.setText(patientRecord.getStagingDetails());
         holder.patientStage.setText(String.valueOf(patientRecord.getStageFigure()));
-        //holder.patientAge.setText(String.valueOf(patientRecord.getPatientAge()));
+        holder.patientAge.setText(String.valueOf(patientRecord.getPatientAge()));
         Calendar calendar = Calendar.getInstance();
         String currentDate = DateFormat.getDateInstance().format(calendar.getTime());
         holder.dateAdded.setText(currentDate);
@@ -69,8 +68,8 @@ public class RecordsAdapter extends ListAdapter<Records, RecordsAdapter.ViewHold
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView patientName, patientSymptoms, patientStage, dateAdded;
-        //patientAge
+        private TextView patientName, patientSymptoms, patientStage, dateAdded,
+        patientAge;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -78,7 +77,7 @@ public class RecordsAdapter extends ListAdapter<Records, RecordsAdapter.ViewHold
             patientName = itemView.findViewById(R.id.dummyPatientName);
             patientSymptoms = itemView.findViewById(R.id.dummySymptoms);
             patientStage = itemView.findViewById(R.id.dummyStage);
-            //patientAge = itemView.findViewById(R.id.ageTest);
+            patientAge = itemView.findViewById(R.id.ageTest);
             dateAdded = itemView.findViewById(R.id.testDate);
 
             itemView.setOnClickListener(new View.OnClickListener() {

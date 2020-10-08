@@ -45,12 +45,12 @@ public abstract class RecordsDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            recordsDao.insert(new Records("Patient Zero", 55,
-                    "Stage Palpable, Less than 2", 1));
-            recordsDao.insert(new Records("Patient X", 44,
-                    "Stage Underlying, Positive", 4));
-            recordsDao.insert(new Records("Patient Jane Doe", 33,
-                    "Stage 3 Symptoms", 3));
+            recordsDao.insert(new Records("Dummy Text 1", 55,
+                    "Swipe Left or Right To Delete", 1));
+            recordsDao.insert(new Records("Dummy Text 2", 44,
+                    "Click On That Delete Action At The Top To Delete All Entry", 4));
+            recordsDao.insert(new Records("Dummy Text 3", 33,
+                    "Click On The Button Below TO Add A New Record", 3));
             return null;
         }
     }

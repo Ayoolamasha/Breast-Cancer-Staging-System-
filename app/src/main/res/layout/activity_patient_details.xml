@@ -141,11 +141,7 @@
         android:layout_marginTop="10dp"
         style="@style/CustomText"/>
 
-<!--    <NumberPicker-->
-<!--        android:id="@+id/Stage"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        />-->
+
 
 
 
